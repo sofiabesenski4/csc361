@@ -8,16 +8,11 @@ server_socket = socket(AF_INET, SOCK_STREAM)
 #Prepare a server socket
 print "Server starting: Python version : ", sys.version
 
-
-
-
-SERVER_HOSTNAME= sys.argv[1]
-
 #specifying a port to bind the webserver to, arbitrary non-privileged port
 PORT=11112
 
 #finding the IP adr of the machine the server is running on
-host_name= SERVER_HOSTNAME
+host_name= gethostbyname(gethostname())
 print "host_name=",host_name, "on port: ", PORT
 
 server_socket.bind((host_name,PORT))
